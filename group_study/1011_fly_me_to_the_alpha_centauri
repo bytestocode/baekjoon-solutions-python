@@ -1,0 +1,19 @@
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+
+for _ in range(N):
+  x, y = map(int, input().split())
+  distance = y - x
+  count = 0
+  k = 1
+  traveled = 0
+  
+  while traveled < distance:
+    count += 1
+    traveled += k
+    if count % 2 == 0:
+      k += 1
+  
+  print(count)
